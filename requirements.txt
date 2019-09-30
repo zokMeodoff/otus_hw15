@@ -1,0 +1,6 @@
+Django==2.0.13
+django-debug-toolbar==1.11
+djangorestframework==3.9.4
+pytz==2019.1
+sqlparse==0.3.0
+coverage==4.5.4

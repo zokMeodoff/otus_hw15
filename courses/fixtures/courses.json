@@ -1,0 +1,97 @@
+[
+	{
+		"model": "courses.course",
+		"pk": 1,
+		"fields": {
+			"title": "Разработчик С++",
+			"description": "Особенности разработки программного обеспечения на С++",
+			"price": 50000,
+			"date_start": "2019-06-27 20:00:00+00:00",
+			"duration": 5,
+			"teachers": [1,2],
+			"students": []
+		}
+	},
+	{
+		"model": "courses.course",
+		"pk": 2,
+		"fields": {
+			"title": "Разработчик Java Script",
+			"description": "Полный курс по JavaScript для web-разработчиков, которые хотят вывести свои навыки программирования на новый профессиональный уровень",
+			"price": 50000,
+			"date_start": "2019-06-27 20:00:00+00:00",
+			"duration": 5,
+			"teachers": [3,4],
+			"students": []
+		}
+	},
+	{
+		"model": "courses.teacher",
+		"pk": 1,
+		"fields": {
+			"first_name": "Сергей",
+			"last_name": "Кольцов",
+			"about": "Senior Developer С++ VisionLabs"
+		}
+	},
+	{
+		"model": "courses.teacher",
+		"pk": 2,
+		"fields": {
+			"first_name": "Дмитрий",
+			"last_name": "Шебордаев",
+			"about": "Руководитель отдела разработки технологий в Rambler&Co"
+		}
+	},
+	{
+		"model": "courses.teacher",
+		"pk": 3,
+		"fields": {
+			"first_name": "Павел",
+			"last_name": "Асташкин",
+			"about": "Маркетолог по образованию, программист по призванию."
+		}
+	},
+	{
+		"model": "courses.teacher",
+		"pk": 4,
+		"fields": {
+			"first_name": "Александр",
+			"last_name": "Коржиков",
+			"about": "Разработчик JavaScript в международной финансовой корпорации ING, главный офис которой находится в Амстердаме. Занимается проектированием и поддержкой процессов WEB-разработки."
+		}
+	},
+	{
+		"model": "courses.lesson",
+		"pk": 1,
+		"fields": {
+			"title": "Введение в курс Modern JavaScript Frameworks",
+			"description": "",
+			"date": "2019-06-27 20:00:00+00:00",
+			"homework": "Сборка и публикация пакета",
+			"course": 1
+		}
+	},
+	{
+		"model": "courses.lesson",
+		"pk": 2,
+		"fields": {
+			"title": "Особенности C++11",
+			"description": "",
+			"date": "2019-07-01 20:00:00+00:00",
+			"homework": "",
+			"course": 1
+		}
+	},
+	{
+		"model": "courses.lesson",
+		"pk": 3,
+		"fields": {
+			"title": "Введение в курс Modern JavaScript Frameworks",
+			"description": "",
+			"date": "2019-06-27 20:00:00+00:00",
+			"homework": "Написать функцию суммирования значений",
+			"course": 2
+		}
+	}
+]
