@@ -74,6 +74,89 @@ class RegisterTestCase(TestCase):
 
         self.assertEqual(400, response_from_url.status_code)
 
+    def test_register_fail_long_username(self):
+        request = {
+            'username': 'NewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtest',
+            'password': 123456,
+            'email': 'newtestuser@email.com',
+        }
+
+        request_json = json.dumps(request)
+        response_from_url = client.post('/users/', data=request_json, content_type='application/json')
+
+        self.assertEqual(400, response_from_url.status_code)
+
+    def test_register_fail_long_password(self):
+        request = {
+            'username': 'NewTestUser',
+            'password': 123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456123456,
+            'email': 'newtestuser@email.com',
+        }
+
+        request_json = json.dumps(request)
+        response_from_url = client.post('/users/', data=request_json, content_type='application/json')
+
+        self.assertEqual(400, response_from_url.status_code)
+
+    def test_register_fail_long_first_name(self):
+        request = {
+            'username': 'NewTestUser',
+            'password': 123456,
+            'email': 'newtestuser@email.com',
+            'first_name': 'NewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtestNewtest',
+            'last_name': 'User'
+        }
+
+        request_json = json.dumps(request)
+        response_from_url = client.post('/users/', data=request_json, content_type='application/json')
+
+        self.assertEqual(400, response_from_url.status_code)
+
+    def test_register_fail_empty_username(self):
+        request = {
+            'username': '',
+            'password': '123456',
+            'email': 'newtestuser@email.com',
+        }
+
+        request_json = json.dumps(request)
+        response_from_url = client.post('/users/', data=request_json, content_type='application/json')
+
+        self.assertEqual(400, response_from_url.status_code)
+
+    def test_register_fail_empty_password(self):
+        request = {
+            'username': 'NewTestUser',
+            'password': '',
+            'email': 'newtestuser@email.com',
+        }
+
+        request_json = json.dumps(request)
+        response_from_url = client.post('/users/', data=request_json, content_type='application/json')
+
+        self.assertEqual(400, response_from_url.status_code)
+
+    def test_register_fail_incorrect_email(self):
+        request = {
+            'username': 'NewTestUser',
+            'password': '123456',
+            'email': 'newtestuseremail.com',
+        }
+
+        request_json = json.dumps(request)
+        response_from_url = client.post('/users/', data=request_json, content_type='application/json')
+
+        self.assertEqual(400, response_from_url.status_code)
+
+    def test_register_fail_empty_request(self):
+        request = {
+        }
+
+        request_json = json.dumps(request)
+        response_from_url = client.post('/users/', data=request_json, content_type='application/json')
+
+        self.assertEqual(400, response_from_url.status_code)
+
 
 class LoginTestCase(TestCase):
     def setUp(self):
