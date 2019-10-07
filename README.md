@@ -80,8 +80,8 @@ $ python manage.py runserver
 
 Тестирование регистрации и аутентификации пользователя:
 
-    coverage run --source='.' manage.py test users
+    $ coverage run --source='.' manage.py test users
 
 Тестирование просмотра списка курсов, просмотра конкретного курса, записи на курс:
 
-    coverage run --source='.' manage.py test courses
+    $ coverage run --source='.' manage.py test courses
